@@ -1,0 +1,12 @@
+server:
+  # ?????
+  port: 8083
+
+spring:
+  # MySQL ??
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/sky?useUnicode=true&useSSL=true&characterEncoding=utf8
+    username: root
+    password: 030319

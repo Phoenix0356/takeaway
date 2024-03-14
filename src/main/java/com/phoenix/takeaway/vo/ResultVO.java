@@ -16,23 +16,23 @@ public class ResultVO<T> implements Serializable {
     private T data; //数据
 
     public static <T> ResultVO<T> success() {
-       ResultVO<T> resultDTO = new ResultVO<T>();
-       resultDTO.code = 1;
-        return resultDTO;
+       ResultVO<T> resultVO = new ResultVO<T>();
+       resultVO.code = 1;
+       return resultVO;
     }
 
     public static <T> ResultVO<T> success(T object) {
-        ResultVO<T> resultDTO = new ResultVO<T>();
-        resultDTO.data = object;
-        resultDTO.code = 1;
-        return resultDTO;
+        ResultVO<T> resultVO = new ResultVO<T>();
+        resultVO.data = object;
+        resultVO.code = 1;
+        return resultVO;
     }
 
     public static <T> ResultVO<T> error(String msg) {
-        ResultVO<T> resultDTO = new ResultVO<T>();
-        resultDTO.msg = msg;
-        resultDTO.code = 0;
-        return resultDTO;
+        ResultVO<T> resultVO = new ResultVO<T>();
+        resultVO.msg = msg;
+        resultVO.code = 0;
+        return resultVO;
     }
 
 }

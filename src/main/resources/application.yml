@@ -1,12 +1,52 @@
 server:
   # ?????
-  port: 8083
+  port: 8092
 
 spring:
   # MySQL ??
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/sky?useUnicode=true&useSSL=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/takeaway?useUnicode=true&useSSL=true&characterEncoding=utf8
     username: root
     password: 030319
+
+  data:
+    redis:
+      host: 127.0.0.1
+      password: 123456
+      port: 6379
+
+mybatis:
+  #mapper????
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.phoenix.takeaway.entity
+  configuration:
+    #??????
+    map-underscore-to-camel-case: true
+
+jwt:
+  # ??jwt??????????
+  admin-secret-key: fdfhjggoajgjaeifgjfoijsdgkdfjsgkjvldgsgsgsgds
+  # ??jwt????
+  admin-ttl: 7200000
+  # ?????????????
+  admin-token-name: token
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.phoenix.takeaway.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
